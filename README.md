@@ -12,53 +12,53 @@ Utils for [JJV JSON Validator](https://github.com/acornejo/jjv) - useful api to 
 Lets have an example - jsonSchema
 
 ```
-    jsonSchema = {
-        "name": "test",
-        "common": {
-            "properties": {
-                "type": {
-                    "enum": ["common"]
-                }
-            },
-            "required": [
-                "type"
-            ]
-        }
-    };
+jsonSchema = {
+    "name": "test",
+    "common": {
+        "properties": {
+            "type": {
+                "enum": ["common"]
+            }
+        },
+        "required": [
+            "type"
+        ]
+    }
+};
 ```
 
 Utils will create an jjv env for further usage with a `test` (jsonSchema.name) namespace. If jsonSchema is not given as an argument - an envirionment will be created without any namespace.
 ```
-    schema = require(pathToJjvUtils)(jsonSchema);
+schema = require(pathToJjvUtils)(jsonSchema);
 ```
 
 Use `add` to add json schema after initialization
 ```
-    schema.add('test1', jsonSchema);
+schema.add('test1', jsonSchema);
 ```
 
 Use `is` to validate an object by schema reference, like jjv validate method
 ```
-    commonObj = { type: 'common' };
-    schema.is('test#/common', commonObj) => true
+commonObj = { type: 'common' };
+schema.is('test#/common', commonObj) => true
 ```
 Use `generate` to generate a function to compare conditions. Easy to use in `each`, `find` and other `lodash` iterable funnctions.
 ```
-    var testCommon = schema.generate('test#/common');
-    [commonObj].map(testCommon) => [true]
+var testCommon = schema.generate('test#/common');
+[commonObj].map(testCommon) => [true]
 
-    var testNotCommon = schema.generate('test#/common', true);
-    [commonObj].map(testNotCommon) => [false]
+var testNotCommon = schema.generate('test#/common', true);
+[commonObj].map(testNotCommon) => [false]
 ```
 
 Use `find` to easy `switch` condition. Usable for cozy factory functions.
 ```
-    var references = {
-        'test#/common': 1
-    };
+var references = {
+    'test#/common': 1
+};
 
-    schema.find(references, commonObj) => 1
-    schema.find(references, unknownObj, true) => undefined
+schema.find(references, commonObj) => 1
+schema.find(references, unknownObj, true) => undefined
 ```
 
 ## API
