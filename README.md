@@ -74,7 +74,7 @@ Use `find` to easy `switch` condition. Usable for cozy factory functions.
 
 ## Resources
 
-[JJV JSON Validator](https://github.com/acornejo/jjv)
-[npm package](https://www.npmjs.com/package/jjv-utils)
-[github source code](https://github.com/korzio/jjv-utils)
-[How to Create and Publish Your First Node.js Module](https://medium.com/@jdaudier/how-to-create-and-publish-your-first-node-js-module-444e7585b738)
+- [JJV JSON Validator](https://github.com/acornejo/jjv)
+- [npm package](https://www.npmjs.com/package/jjv-utils)
+- [github source code](https://github.com/korzio/jjv-utils)
+- [How to Create and Publish Your First Node.js Module](https://medium.com/@jdaudier/how-to-create-and-publish-your-first-node-js-module-444e7585b738)
