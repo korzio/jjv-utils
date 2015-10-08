@@ -1,0 +1,14 @@
+{
+	"name": "test",
+
+	"common": {
+		"properties": {
+			"type": {
+				"enum": ["common"]
+			}
+		},
+		"required": [
+			"type"
+		]
+	}
+}
