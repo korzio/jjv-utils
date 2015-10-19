@@ -66,6 +66,7 @@ schema.find(references, unknownObj) => undefined
 - **is(String reference, Object data)** validate object by schema reference
 - **generate(String reference[, Boolean isReverse])** generates function to use in functional expressions
 - **find(Object/Array types, Object data)** iterates through an object or array to find appropriate schema to given object. Returns `undefined` if not found.
+- **env** original jjv-environment
 
 ## Tests
 
