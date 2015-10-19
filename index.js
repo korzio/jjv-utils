@@ -19,7 +19,8 @@ module.exports = function (file) {
         is: isValid,
         add: addSchema,
         generate: generateValidator,
-        find: find
+        find: find,
+        env: env
     };
 
     /**
