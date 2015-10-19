@@ -90,10 +90,6 @@ module.exports = function (file) {
             }
         }
 
-        if (!found && !silent) {
-            throw new Error('Schema not found');
-        }
-
         return resultType;
     }
 };
