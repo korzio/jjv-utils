@@ -1,5 +1,4 @@
 # jjv-utils
-===========
 
 Utils for [JJV JSON Validator](https://github.com/acornejo/jjv) - useful api to use json-schema and jjv tool.
 
@@ -42,7 +41,7 @@ Use `is` to validate an object by schema reference, like jjv validate method
 commonObj = { type: 'common' };
 schema.is('test#/common', commonObj) => true
 ```
-Use `generate` to generate a function to compare conditions. Easy to use in `each`, `find` and other `lodash` iterable funnctions.
+Use `generate` to generate a function to compare conditions. Easy to use in `each`, `find` and other `lodash` iterable functions.
 ```
 var testCommon = schema.generate('test#/common');
 [commonObj].map(testCommon) => [true]
@@ -58,7 +57,7 @@ var references = {
 };
 
 schema.find(references, commonObj) => 1
-schema.find(references, unknownObj, true) => undefined
+schema.find(references, unknownObj) => undefined
 ```
 
 ## API
@@ -66,7 +65,7 @@ schema.find(references, unknownObj, true) => undefined
 - **add(String namespace, Object jsonSchema)** add schema to existing jjv environment
 - **is(String reference, Object data)** validate object by schema reference
 - **generate(String reference[, Boolean isReverse])** generates function to use in functional expressions
-- **find(Object/Array types, Object data, Boolean silent)** throws an error without silent flag in case of not found
+- **find(Object/Array types, Object data)** iterates through an object or array to find appropriate schema to given object. Returns `undefined` if not found.
 
 ## Tests
 

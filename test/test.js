@@ -55,16 +55,15 @@ describe('jjv-utils', function() {
             };
 
             expect(schema.find(references, commonObj)).to.equal(1);
+
             expect(function(){
                 return schema.find(references, unknownObj)
-            }).to.throw(Error);
-            expect(function(){
-                return schema.find(references, unknownObj, true)
             }).to.not.throw(Error);
-            expect(schema.find(references, unknownObj, true)).to.equal(undefined);
+            expect(schema.find(references, unknownObj)).to.equal(undefined);
 
             var referencesArr = ['test#/common'];
             expect(schema.find(referencesArr, commonObj)).to.equal(0);
+            expect(schema.find(referencesArr, unknownObj)).to.equal(undefined);
         });
     });
 });
